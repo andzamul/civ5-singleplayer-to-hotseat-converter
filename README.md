@@ -4,6 +4,15 @@ Convert existing **Sid Meier's Civilization V singleplayer and scenario saves in
 
 This makes it possible to play scenarios such as **Fall of Rome** and **1066: Year of Viking Destiny** in Hotseat even though Civilization V does not normally provide a way to configure those scenarios as Hotseat games.
 
+## Requirements
+
+* **Python 3**
+* Civilization V
+
+No additional Python packages are required.
+
+The converter uses only Python's standard library.
+
 ## Features
 
 * Convert an existing `.Civ5Save` from Singleplayer to Hotseat.
@@ -20,7 +29,7 @@ This makes it possible to play scenarios such as **Fall of Rome** and **1066: Ye
   * scenario rules
   * starting positions
 * Creates a new save instead of modifying the original.
-* Can output directly to the Civilization V Hotseat save directory.
+* Can save directly into Civilization V's Hotseat save directory.
 
 ## Tested
 
@@ -31,33 +40,37 @@ Successfully tested with:
   * Western Rome and Eastern Rome as two human players.
 * **1066: Year of Viking Destiny**
 
-  * All four civilizations simultaneously configured as human players.
+  * All four civilizations configured as human players simultaneously.
 
 Additional scenarios and ordinary singleplayer saves may also work, but have not all been individually tested.
 
 ## How to Use
 
-1. Launch `Civ5HotseatConverter.exe`.
+1. Install **Python 3** if it is not already installed.
 
-2. Select the `.Civ5Save` you want to convert.
+2. Double-click:
 
-3. A list of civilizations contained in the save will appear.
+   `Civ5HotseatConverter.py`
 
-4. Check every civilization you want controlled by a human.
+3. Select the `.Civ5Save` you want to convert.
 
-5. Click **Convert to Hotseat**.
+4. A list of civilizations contained in the save will appear.
 
-6. The converted save will be created as:
+5. Check every civilization you want controlled by a human.
+
+6. Click **Convert to Hotseat**.
+
+7. The converted save will be created as:
 
    `OriginalSaveName_HOTSEAT.Civ5Save`
 
-7. Open Civilization V.
+8. Open Civilization V.
 
-8. Go to:
+9. Go to:
 
    **Multiplayer → Hot Seat → Load Game**
 
-9. Load the converted save.
+10. Load the converted save.
 
 Civilization V should now perform normal sequential Hotseat handoffs between the civilizations selected as human players.
 
@@ -70,33 +83,6 @@ The converter can save directly to the current Windows user's Civilization V Hot
 For example:
 
 `C:\Users\YourName\Documents\My Games\Sid Meier's Civilization 5\Saves\hotseat`
-
-## Building From Source
-
-Requirements:
-
-* Python 3
-* PyInstaller
-
-Install PyInstaller:
-
-```bat
-python -m pip install pyinstaller
-```
-
-Build the executable:
-
-```bat
-python -m PyInstaller --onefile --noconsole --name Civ5HotseatConverter Civ5HotseatConverter.py
-```
-
-The finished executable will appear in:
-
-```text
-dist\Civ5HotseatConverter.exe
-```
-
-A provided `BUILD_EXE.bat` can perform this automatically.
 
 ## How It Works
 
